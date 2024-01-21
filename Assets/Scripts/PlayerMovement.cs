@@ -9,7 +9,9 @@ public class PlayerMovement : MonoBehaviour
 {
    public float horizontalInput;
    public float verticalInput;
+   public float currSpeed;
    public float speed;
+   public float sprint;
    Vector3 moveDirection;
    Rigidbody rb;
    public Transform orientation;
@@ -40,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        transform.Translate(moveDirection * speed * Time.deltaTime);
+        transform.Translate(moveDirection * currSpeed * Time.deltaTime);
+
+        if (Input.GetKey("left shift"))
+            currSpeed = speed + sprint;
+        else
+            currSpeed = speed;
     }
 }

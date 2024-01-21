@@ -21,6 +21,7 @@ public class CreatureFOV : MonoBehaviour
     private void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(FOVRoutine());
     }
 
     private IEnumerator FOVRoutine()
