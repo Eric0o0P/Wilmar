@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
    public float horizontalInput;
    public float verticalInput;
+   public bool interactInput;
    public float currSpeed;
    public float speed;
    public float sprint;
@@ -49,4 +50,6 @@ public class PlayerMovement : MonoBehaviour
         else
             currSpeed = speed;
     }
+
+    
 }
